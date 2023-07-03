@@ -1,0 +1,21 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+
+    <main>
+        <% if (lists.length > 0) { %>
+            <div class="grid">
+                <% for (let list of lists) { %>
+                    <ul>
+                        <li class="card__content"><%= list.title %></li>
+                    </ul>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Reminders!</h1>
+        <% } %>
+    </main>
+<%- include('includes/end.ejs') %>
